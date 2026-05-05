@@ -1,0 +1,114 @@
+:root {
+  color-scheme: light dark;
+  --border: #d0d7de;
+  --muted: #57606a;
+  --bg: #ffffff;
+  --bg-alt: #f6f8fa;
+  --fg: #1f2328;
+  --accent: #0969da;
+  --danger: #cf222e;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --border: #30363d;
+    --muted: #8b949e;
+    --bg: #0d1117;
+    --bg-alt: #161b22;
+    --fg: #e6edf3;
+    --accent: #2f81f7;
+    --danger: #f85149;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  width: 360px;
+  margin: 0;
+  padding: 12px;
+  font: 13px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+h1 { font-size: 14px; margin: 0 0 4px; }
+h2 { font-size: 12px; margin: 12px 0 6px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.hint { margin: 0 0 10px; color: var(--muted); font-size: 12px; }
+code { background: var(--bg-alt); padding: 1px 4px; border-radius: 3px; font-size: 11px; }
+
+ul { list-style: none; padding: 0; margin: 0 0 8px; border: 1px solid var(--border); border-radius: 6px; }
+li { padding: 8px; border-bottom: 1px solid var(--border); }
+li:last-child { border-bottom: none; }
+
+.filter-row { display: flex; gap: 8px; align-items: center; }
+.filter-text { flex: 1; min-width: 0; }
+.filter-text strong { display: block; font-weight: 600; }
+.filter-text code { display: inline-block; margin-top: 2px; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.empty { color: var(--muted); text-align: center; padding: 12px; }
+
+.filter-controls { display: flex; gap: 4px; flex-shrink: 0; }
+button.icon {
+  width: 26px; height: 26px;
+  padding: 0;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--fg);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+}
+button.icon:disabled { opacity: 0.4; cursor: default; }
+button.icon.danger:hover:not(:disabled) { color: var(--danger); border-color: var(--danger); }
+
+button.default-btn {
+  font-size: 11px;
+  padding: 3px 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--muted);
+  border-radius: 12px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 11px;
+  line-height: 1;
+}
+button.default-btn:hover { border-color: var(--accent); color: var(--accent); }
+button.default-btn.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+button.default-btn.active:hover { filter: brightness(0.95); }
+
+form label { display: block; margin-bottom: 8px; font-size: 12px; color: var(--muted); }
+form label .optional { font-weight: normal; opacity: 0.8; }
+form input {
+  display: block;
+  width: 100%;
+  margin-top: 3px;
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg);
+  color: var(--fg);
+  font: inherit;
+}
+form input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px rgba(9, 105, 218, 0.3); }
+
+.actions { display: flex; gap: 6px; }
+.actions button {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+}
+.actions button.secondary {
+  background: var(--bg);
+  color: var(--fg);
+}
+.actions button:hover { filter: brightness(0.95); }

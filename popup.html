@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Quick Filters</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header>
+    <h1>Quick Filters</h1>
+    <p class="hint">Buttons appear above the PR list on <code>/owner/repo/pulls</code>.</p>
+  </header>
+
+  <ul id="filter-list" aria-label="Saved filters"></ul>
+
+  <form id="add-form" autocomplete="off">
+    <h2>Add filter</h2>
+    <label>
+      Button label
+      <input id="label-input" type="text" placeholder="No drafts" required maxlength="40" />
+    </label>
+    <label>
+      GitHub query
+      <input id="query-input" type="text" placeholder="is:pr is:open draft:false" required />
+    </label>
+    <label>
+      Author <span class="optional">(optional)</span>
+      <input id="author-input" type="text" placeholder="octocat or @me" />
+    </label>
+    <div class="actions">
+      <button type="submit">Add</button>
+      <button type="button" id="reset-btn" class="secondary">Reset to defaults</button>
+    </div>
+  </form>
+
+  <script src="popup.js"></script>
+</body>
+</html>
