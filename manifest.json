@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "GitHub PR Quick Filters",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Adds quick-filter buttons (No drafts, custom queries) to a repo's Pull Requests list on GitHub.",
   "permissions": ["storage"],
   "host_permissions": ["https://github.com/*"],
@@ -21,7 +21,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://github.com/*/*/pulls*"],
+      "matches": ["https://github.com/*"],
       "js": ["content.js"],
       "run_at": "document_idle"
     }
@@ -29,7 +29,10 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "github-pr-quick-filters@tylerday89",
-      "strict_min_version": "115.0"
+      "strict_min_version": "115.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
     }
   }
 }
