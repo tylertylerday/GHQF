@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "GitHub PR Quick Filters",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Adds quick-filter buttons (No drafts, custom queries) to a repo's Pull Requests list on GitHub.",
   "permissions": ["storage"],
   "host_permissions": ["https://github.com/*"],
